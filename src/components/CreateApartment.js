@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export function CreateApartment() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,14 +17,16 @@ export function CreateApartment() {
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/apartments`, newApartment)
-      .then((res) => {})
+      .then((res) => {
+        navigate('/apartments')
+      })
       .catch((e) => {
         console.log(e);
       });
   };
 
   return (
-    <form>
+    <form className="container" onSubmit={handleSubmit}>
       <div className="form-group">
         <label>
           Title:
