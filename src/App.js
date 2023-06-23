@@ -1,5 +1,8 @@
+//Package imports
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+
+//Component Imports
 
 import { NavBar } from './components/NavBar';
 import { HomePage } from './components/HomePage';
@@ -7,11 +10,11 @@ import { ApartmentsDetails } from './components/ApartmentDetails';
 import { ApartmentsList } from './components/ApartmentsList';
 import { CreateApartment } from './components/CreateApartment';
 
+// Bootstrap Imports
+
 function App() {
 	return (
 		<div className="App">
-			<h1>Welcome</h1>
-
 			<NavBar />
 
 			<Routes>
