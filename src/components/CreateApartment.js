@@ -7,7 +7,7 @@ export function CreateApartment() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newApartment = { 
+    const newApartment = {
       title: title,
       pricePerDay: price,
       img: image,
@@ -22,50 +22,54 @@ export function CreateApartment() {
   };
 
   return (
-    <form
-      className="container CreateApartment d-flex flex-column m-2"
-      onSubmit={handleSubmit}
-    >
-      <label>
-        Title:
-        <input
-          type="text"
-          placeholder="enter the title"
-          value={title}
-          required={true}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-        />
-      </label>
-
-      <label>
-        Price per Day:
-        <input
-          type="number"
-          placeholder="enter the price per day"
-          value={price}
-          required={true}
-          onChange={(e) => {
-            setPrice(e.target.value);
-          }}
-        />
-      </label>
-
-      <label>
-        Image:
-        <input
-          type="url"
-          name="image"
-          placeholder="enter image link"
-          value={image}
-          onChange={(e) => {
-            setImage(e.target.value);
-          }}
-        />
-      </label>
-      <button className="btn btn-primary w-25" type="submit">
-        Create
+    <form>
+      <div className="form-group">
+        <label>
+          Title:
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Title"
+            value={title}
+            required={true}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Price per Day:
+          <input
+            className="form-control"
+            type="number"
+            placeholder="Price per Day"
+            value={price}
+            required={true}
+            onChange={(e) => {
+              setPrice(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Image:
+          <input
+            className="form-control"
+            type="url"
+            name="image"
+            placeholder="Image Link"
+            value={image}
+            onChange={(e) => {
+              setImage(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <button type="submit" className="btn btn-primary m-2">
+        Submit
       </button>
     </form>
   );
