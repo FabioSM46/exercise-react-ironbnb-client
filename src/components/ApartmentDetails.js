@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export function ApartmentsDetails() {
-	const id = useParams();
+	const { id } = useParams();
+	console.log(id);
 	const [apartment, setApartment] = useState([]);
 
 	useEffect(() => {
