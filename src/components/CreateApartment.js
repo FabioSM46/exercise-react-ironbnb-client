@@ -5,12 +5,14 @@ export function CreateApartment() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
-  const handleSubmit = () => {
-    const newApartment = {
-      title: { title },
-      pricePerDay: { price },
-      img: { image },
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newApartment = { 
+      title: title,
+      pricePerDay: price,
+      img: image,
     };
+
     axios
       .post(`${process.env.REACT_APP_API_URL}/apartments`, newApartment)
       .then((res) => {})
@@ -28,7 +30,6 @@ export function CreateApartment() {
         Title:
         <input
           type="text"
-          name="title"
           placeholder="enter the title"
           value={title}
           required={true}
@@ -42,7 +43,6 @@ export function CreateApartment() {
         Price per Day:
         <input
           type="number"
-          name="price"
           placeholder="enter the price per day"
           value={price}
           required={true}
